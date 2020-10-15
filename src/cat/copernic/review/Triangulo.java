@@ -16,6 +16,7 @@ public class Triangulo {
     private double altura;
     
     public Triangulo(double base, double altura) {
+        //if (base <= 0 || altura <= 0) throw new ParametroNoPositivoException("La base o altura deben ser positivas");
         this.base = base;
         this.altura = altura;
     }
@@ -25,6 +26,7 @@ public class Triangulo {
     }
 
     public void setBase(double base) {
+        //también se puede poner aquí excepción
         this.base = base;
     }
 
@@ -42,12 +44,13 @@ public class Triangulo {
     }
 
     public void area()throws Exception{
-        if (base <= 0 || altura <= 0) throw new Exception("La base o altura deben ser positivas");
+        if (base <= 0 || altura <= 0) throw new ParametroNoPositivoException("La base o altura deben ser positivas");
         double area = base*altura/2;
         System.out.println("El area es de " + area);
+        //return base*altura/2;
     }
     public void perimetro() throws Exception{
-        if (base <= 0 || altura <= 0) throw new Exception("La base o altura deben ser positivas");
+        if (base <= 0 || altura <= 0) throw new ParametroNoPositivoException("La base o altura deben ser positivas");
         double hipotenusa = Math.sqrt((base/2*base/2)+(altura*altura));
         double perimetro = (hipotenusa*2)+base;
         System.out.println("El perimetro es de " + perimetro);
